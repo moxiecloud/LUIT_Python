@@ -35,8 +35,8 @@ def print_service_list(service_list, list_action):
     if list_action == "initial":
       print('\nThe AWS service initial list includes: \n' + str(aws_svc_list))
       print('My initial list of AWS Services includes ' + str(len(aws_svc_list)) + ' services.\n')
-    elif list_action == "append":
-      print("The new AWS service list includes: " + str(aws_svc_list) + " and includes " + str(len(aws_svc_list)) + " services.\n")
+  elif list_action == "insert":
+      print("The new AWS service inserted in list. List includes: " + str(aws_svc_list) + " and includes " + str(len(aws_svc_list)) + " services.\n")
     elif list_action == 'remove':
       print("The AWS service list with one item removed includes: " + str(aws_svc_list) + " list includes " + str(len(aws_svc_list)) + " services.\n")
     return()
@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     # insert new service and print new list + plus the length list
     aws_svc_list = insert_newservice(aws_svc_list)
-    print_service_list(aws_svc_list, "append")
+    print_service_list(aws_svc_list, "insert")
 
     # remove a service from list and then print list with item removed + length of list
     aws_svc_list = remove_service(aws_svc_list)
