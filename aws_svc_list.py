@@ -39,7 +39,9 @@ def print_service_list(service_list, list_action):
     elif list_action == "insert":
       print("A new AWS service was inserted in list. List includes: " + str(aws_svc_list) + " and includes " + str(len(aws_svc_list)) + " services.\n")
     elif list_action == 'remove':
-      print("The AWS service list with one item removed includes: " + str(aws_svc_list) + " list includes " + str(len(aws_svc_list)) + " services.\n")
+      print("The AWS service list with two items removed includes: " + str(aws_svc_list) + " list includes " + str(len(aws_svc_list)) + " services.\n")
+    else:
+      pass
     return()
 
 if __name__ == '__main__':
