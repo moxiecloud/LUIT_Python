@@ -26,9 +26,10 @@ def insert_newservice(exist_list):
     exist_list.insert((len(exist_list)+ 1), 'SageMaker')
     return(exist_list)
 
-# remove a service from list
+# remove 2 services from list
 def remove_service(exist_list):
     exist_list.remove('EC2')
+    exist_list.remove('S3')
     return(exist_list)
 
 def print_service_list(service_list, list_action):
