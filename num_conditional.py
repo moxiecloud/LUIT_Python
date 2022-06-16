@@ -21,7 +21,7 @@ def process_num(n):
 
 
 if __name__ == '__main__':
-    n = int(raw_input().strip())
+    n = int(input().strip())
     if not(1 <= n <= 100):
         print("You need to enter a number between 1 and 100. ")
     else:
