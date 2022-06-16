@@ -34,12 +34,12 @@ def remove_service(exist_list):
 
 def print_service_list(service_list, list_action):
     if list_action == "initial":
-      print('\nThe AWS service initial list includes: \n' + str(aws_svc_list))
-      print('My initial list of AWS Services includes ' + str(len(aws_svc_list)) + ' services.\n')
+      print('\nThe AWS service initial list includes: \n' + str(service_list))
+      print('My initial list of AWS Services includes ' + str(len(service_list)) + ' services.\n')
     elif list_action == "insert":
-      print("A new AWS service was inserted in list. List includes: " + str(aws_svc_list) + " and includes " + str(len(aws_svc_list)) + " services.\n")
+      print("A new AWS service was inserted in list. List includes: " + str(service_list) + " and includes " + str(len(service_list)) + " services.\n")
     elif list_action == 'remove':
-      print("The AWS service list with two items removed includes: " + str(aws_svc_list) + " list includes " + str(len(aws_svc_list)) + " services.\n")
+      print("The AWS service list with two items removed includes: " + str(service_list) + " list includes " + str(len(service_list)) + " services.\n")
     else:
       pass
     return()
