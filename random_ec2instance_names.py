@@ -19,8 +19,7 @@ dept_list = ['Accounting', 'Marketing', 'FinOps']
 EC2_Instances = []
 
 print('\nEC2 instance unique name generator.\n')
-
-num_instance_names = int(input('Enter the number of EC2 instance names you need: '))
+print('Only Marketing, Accounting and FinOps are authorized to use the name generator.\n')
 
 # User enters department name, the first letter of dept is capitalized & will be
 # concatenated with the generated random characters and numbers to assure instance
@@ -28,13 +27,20 @@ num_instance_names = int(input('Enter the number of EC2 instance names you need:
 dept_name = input('Enter Department Name: ')
 dept_name = dept_name.title()
 
-# Generate unique names for EC2 instances based on number of names needed
-for _ in range(num_instance_names):
+if dept_name not in dept_list:
+    print('\nOnly Marketing, Accounting and FinOps are authorized to use the name generator.\n')
+    print('Please contact your IT support services with any questions.\n')
+else:
+    # enter the number of random names department needs
+    num_instance_names = int(input('Enter the number of EC2 instance names you need: '))
 
-    N = 8
-    res = ''.join(random.choices(string.ascii_uppercase +  string.digits, k = N))
+    # Generate unique names for EC2 instances based on number of names needed
+    for _ in range(num_instance_names):
 
-    EC2_Instances.append((dept_name + '-' + str(res)))
+        N = 8
+        res = ''.join(random.choices(string.ascii_uppercase +  string.digits, k = N))
 
-print("\nList of unique names for your department EC2 instances:")
-print('\n'.join(EC2_Instances))
+        EC2_Instances.append((dept_name + '-' + str(res)))
+
+    print("\nList of unique names for your department EC2 instances:")
+    print('\n'.join(EC2_Instances))
