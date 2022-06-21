@@ -15,11 +15,11 @@ import string
 # Valid department list
 dept_list = ['Accounting', 'Marketing', 'FinOps']
 
-# EC2 instance list
-EC2_Instances = []
-
 print('\nEC2 instance unique name generator.\n')
 print('Only Marketing, Accounting and FinOps are authorized to use the name generator.\n')
+
+# EC2 instance list
+EC2_Instances = []
 
 # User enters department name, the first letter of dept is capitalized & will be
 # concatenated with the generated random characters and numbers to assure instance
@@ -27,6 +27,11 @@ print('Only Marketing, Accounting and FinOps are authorized to use the name gene
 dept_name = input('Enter Department Name: ')
 dept_name = dept_name.title()
 
+# Special check of FinOps department. Would I do this in the wild?
+if str.lower(dept_name) == "finops":
+    dept_name = "FinOps"
+
+# Check department name
 if dept_name not in dept_list:
     print('\nOnly Marketing, Accounting and FinOps are authorized to use the name generator.\n')
     print('Please contact your IT support services with any questions.\n')
