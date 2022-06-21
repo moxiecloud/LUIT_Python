@@ -27,7 +27,8 @@ EC2_Instances = []
 dept_name = input('Enter Department Name: ')
 dept_name = dept_name.title()
 
-# Special check of FinOps department. Would I do this in the wild?
+# Special check of FinOps department. Would I do this in the wild? Code should be sustainable
+# and the solution below is not optimal though okay for this exercise
 if str.lower(dept_name) == "finops":
     dept_name = "FinOps"
 
@@ -41,8 +42,10 @@ else:
 
     # Generate unique names for EC2 instances based on number of names needed
     for _ in range(num_instance_names):
-
+        # N is the number of random characters to be generated
         N = 8
+        # res is the variable that stores the random characters to be appended to the Department
+        # name
         res = ''.join(random.choices(string.ascii_uppercase +  string.digits, k = N))
 
         EC2_Instances.append((dept_name + '-' + str(res)))
