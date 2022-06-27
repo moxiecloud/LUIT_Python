@@ -22,10 +22,11 @@
 
 # sort student records by student score and identify the student(s) with second lowest scores
 def second_lowest_score(student_names):
+
         # sort by the student score, with student(s) with the lowest score in ascending order
         student_names.sort(key = lambda l: l[1])
 
-        # check to see which is second lowest score, must return all students that have the second
+        # check to see which is second lowest score, must return all students that have second
         # lowest score
         # second_lscore_student[0] is names
         # second_lscore_student[1] is score
@@ -42,6 +43,7 @@ def second_lowest_score(student_names):
 student_records = []
 
 if __name__ == '__main__':
+    # the for loop input is to enter the number of students that will be processed
     for _ in range(int(input())):
 
         # inner list
@@ -55,7 +57,7 @@ if __name__ == '__main__':
         score = float(input())
         one_student.append(score)
 
-        # append inner list to outer list
+        # append inner list (one_student) to outer list (student_records)
         student_records.append(one_student)
 
     # get student(s) with second lowest score
@@ -69,4 +71,4 @@ if __name__ == '__main__':
         # on a separate line
         print('\n'.join(students_2nd_lowest_score))
     else:
-        print("Have a constraint of at least 1 student with 2nd lowest score but not more than 5.")
+        print("Have constraint of at least 1 student with 2nd lowest score but not more than 5.")
